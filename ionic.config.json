@@ -1,0 +1,8 @@
+{
+  "name": "NextEpisodeClient",
+  "app_id": "c0332b74",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
