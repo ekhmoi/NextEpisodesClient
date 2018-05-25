@@ -1,3 +1,15 @@
 page-home {
+  .scroll-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .episode-scroller {
 
+    height: calc(100vw + 86px);
+    width: 100vw;
+    ion-row.row {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
 }

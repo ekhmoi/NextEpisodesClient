@@ -1,0 +1,10 @@
+<ion-item tappable (click)="clickedResult.emit(item)">
+  <ion-thumbnail item-start>
+    <img [src]="item && item.image && item.image.medium ? item.image.medium : 'assets/imgs/no-poster.svg'">
+  </ion-thumbnail>
+  <h2>{{item.name}}</h2>
+  <p [innerHTML]="item.summary"></p>
+  <ion-note item-end small>
+    <p>{{item.status}}</p>
+  </ion-note>
+</ion-item>

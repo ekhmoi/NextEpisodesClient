@@ -1,0 +1,37 @@
+episode-item {
+  ion-card.card {
+    border-radius: 5px;
+    margin: 0px !important;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4);
+    height: 100vw;
+  }
+  .heart-icon {
+    position: absolute;
+    font-size: 0.5em;
+  }
+  .bookmark-button {
+    position: absolute;
+    font-size: 3em;
+    right: 0;
+    top: -35px;
+    z-index: 2;
+  }
+  ion-item.item {
+    padding-left: 0px;
+    .item-inner {
+      border-bottom: none !important;
+    }
+
+    [item-end] {
+      text-align: right;
+    }
+  }
+  .episode-poster {
+    object-fit: cover;
+    width: 100%;
+    height: 100vw;
+  }
+}

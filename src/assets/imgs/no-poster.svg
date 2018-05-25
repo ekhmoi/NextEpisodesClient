@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2000px" height="2000px" viewBox="0 0 2000 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="2000" height="2000"></rect>
+        <path d="M826,575 L826,681.199997 C826,697.768539 812.568542,711.199997 796,711.199997 L680,711.199997 L826,575 Z" id="path-2"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6">
+            <g id="Rectangle-3">
+                <use fill="#826DFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#000000" stroke-width="1" x="0.5" y="0.5" width="1999" height="1999"></rect>
+            </g>
+            <g id="Group-5" transform="translate(680.000000, 575.000000)">
+                <polygon id="Path-2" stroke="#979797" fill="#FFFFFF" points="6 138 149 4 149 97 141 118 124 134 82 143 37 143"></polygon>
+                <g id="Group-4">
+                    <path d="M145.615834,86.2055166 L145.615834,0 L320,0 L320,850 L50,850 C22.3857625,850 6.46976933e-14,827.614237 0,800 L0,136.205517 L95.6158342,136.205517 C123.230072,136.205517 145.615834,113.819754 145.615834,86.2055166 Z" id="Rectangle-4" fill="#FFFFFF"></path>
+                    <circle id="Oval" fill="#979797" cx="199" cy="242" r="30"></circle>
+                </g>
+                <g id="Group-4-Copy" transform="translate(480.000000, 425.000000) scale(-1, 1) translate(-480.000000, -425.000000) translate(320.000000, 0.000000)">
+                    <path d="M50,2.43978527e-15 L145.615834,7.10542736e-15 L320,0 L320,850 L50,850 C22.3857625,850 6.46976933e-14,827.614237 0,800 L0,136.205517 L7.10542736e-15,50 C3.7236586e-15,22.3857625 22.3857625,1.21780805e-14 50,7.10542736e-15 Z" id="Rectangle-4" fill="#FFFFFF"></path>
+                    <circle id="Oval" fill="#979797" cx="199" cy="242" r="30"></circle>
+                </g>
+                <rect id="Rectangle-5" fill="#FFFFFF" x="268" y="10" width="105" height="830"></rect>
+            </g>
+            <g id="Mouth" transform="translate(864.000000, 1000.000000)">
+                <ellipse id="Oval-2" stroke="#979797" stroke-width="10" cx="126.5" cy="108" rx="98.5" ry="108"></ellipse>
+                <rect id="Path" fill="#FFFFFF" x="0" y="38" width="274" height="196"></rect>
+            </g>
+            <path d="M840,901 C847.179702,901 853,898.73863 853,886.379032 C853,882.085329 848.767442,877.725806 845.744186,874.145161 C844.06349,872.1546 842.148761,868.772879 840,864 C838.184243,868.8559 836.471065,872.23762 834.860465,874.145161 C831.837209,877.725806 827,881.834317 827,886.379032 C827,898.73863 832.820298,901 840,901 Z" id="Oval-3" fill="#87BEFF"></path>
+            <text id="NO-POSTER" font-family="Avenir-Light, Avenir" font-size="100" font-weight="300" fill="#979797">
+                <tspan x="721" y="1257">NO POSTER</tspan>
+            </text>
+            <g id="Triangle">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                <path stroke="#979797" stroke-width="5" d="M823.5,580.751127 L686.344821,708.699997 L796,708.699997 C811.187831,708.699997 823.5,696.387828 823.5,681.199997 L823.5,580.751127 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>

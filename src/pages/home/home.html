@@ -1,17 +1,27 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+<ion-header no-border>
+  <ion-navbar color="white">
+    <ion-title>Upcoming</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+
+  <ion-title class="episode-container-title">Today</ion-title>
+  <ion-scroll scrollX="true" class="episode-scroller">
+    <ion-row nowrap class="headerChip">
+      <ion-col col-9 *ngFor="let episode of today">
+        <episode-item [item]="episode" (clickedItem)="navCtrl.push('OverviewPage', { episode: $event })"></episode-item>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
+
+  <ion-title class="episode-container-title">Tomorrow</ion-title>
+  <ion-scroll scrollX="true" class="episode-scroller">
+    <ion-row nowrap class="headerChip">
+      <ion-col col-9 *ngFor="let episode of tomorrow">
+        <episode-item [item]="episode" (clickedItem)="navCtrl.push('OverviewPage', { episode: $event })"></episode-item>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
+
 </ion-content>

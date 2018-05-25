@@ -1,0 +1,25 @@
+<!-- Generated template for the EpisodeItemComponent component -->
+<ion-card (click)="clickedItem.emit(item)">
+  <button ion-button large icon-only clear color="secondary" class="bookmark-button" (click)="toggleSaved(); $event.stopPropagation();"
+    mode="md">
+    <ion-icon name="ios-bookmark"></ion-icon>
+    <ion-icon [name]="isSaved ? 'md-heart' : 'md-heart-outline'" color="white" class="heart-icon"></ion-icon>
+  </button>
+  <img [src]="item.show.image && item.show.image.original ? item.show.image.original : 'assets/imgs/no-poster.svg'" alt=""
+    class="episode-poster">
+  <!-- <div class="overlay" [ngClass]="overlayClass"></div> -->
+</ion-card>
+<ion-item mode="md" tappable (click)="clickedItem.emit(item)">
+  <p>
+    <b>{{item.show.name}}</b>
+  </p>
+  <p>{{item.name}}</p>
+  <div item-end>
+    <p>
+      <b>{{item.season}}x{{item.number}}</b>
+    </p>
+    <p>
+      <countdown [timeStamp]="item.airstamp"></countdown>
+    </p>
+  </div>
+</ion-item>

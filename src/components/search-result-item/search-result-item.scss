@@ -1,0 +1,21 @@
+$thumbnail-size: 50px !important;
+$thumbnail-margin: 10px !important;
+search-result-item {
+  ion-item.item {
+    ion-thumbnail {
+      min-height: $thumbnail-size;
+      min-width: $thumbnail-size;
+      width: $thumbnail-size;
+      height: $thumbnail-size;
+      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+      margin-top: $thumbnail-margin;
+      margin-bottom: $thumbnail-margin;
+      img {
+        border-radius: 5px;
+        object-fit: cover;
+        width: 100%;
+        height: $thumbnail-size;;
+      }
+    }
+  }
+}

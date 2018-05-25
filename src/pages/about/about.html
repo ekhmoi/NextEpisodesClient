@@ -1,11 +1,11 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
+<ion-header no-border>
+  <ion-navbar color="white">
+    <ion-title>Favorites</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <search-result-item *ngFor="let item of favorites" [item]="item" (clickedResult)="navCtrl.push('OverviewPage', { episode: { show: $event } })"></search-result-item>
+  </ion-list>
 </ion-content>

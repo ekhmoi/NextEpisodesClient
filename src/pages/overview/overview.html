@@ -1,0 +1,97 @@
+<!--
+  Generated template for the OverviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar color="transparent">
+    <ion-buttons end>
+      <button class="heart-icon" ion-button icon-only (click)="toggleSaved()">
+        <ion-icon [name]="isSaved ? 'md-heart' : 'md-heart-outline'" [color]="isSaved ? 'red' : 'white'" class="heart-icon"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div ion-fixed class="bg-image-holder">
+    <img [src]="episode && episode.show && episode.show.image && episode.show.image.original ? episode.show.image.original : 'assets/imgs/no-poster.svg'"
+      alt="">
+  </div>
+
+  <ion-card class="content-holder">
+    <ion-card class="image">
+      <img [src]="episode && episode.show && episode.show.image && episode.show.image.medium ? episode.show.image.medium : 'assets/imgs/no-poster.svg'"
+        alt="">
+    </ion-card>
+    <div class="details">
+
+      <p>
+        <b>{{episode?.show.name}}</b>
+      </p>
+      <p>{{episode?.name}}</p>
+
+      <p>
+        <b>Genres:</b>
+      </p>
+      <p class="genres">
+        <span *ngFor="let genre of (episode && episode.show && episode.show.genres ? episode.show.genres : [])">{{genre}}</span>
+      </p>
+
+      <p>
+        <b>Duration:</b>
+      </p>
+      <p>{{episode?.runtime}} minutes</p>
+    </div>
+
+    <div class="description">
+      <p>
+        <b>Description:</b>
+      </p>
+      <p [innerHTML]="showDetails?.summary"></p>
+    </div>
+  </ion-card>
+
+
+  <ion-list *ngIf="showDetails && showDetails._embedded.nextepisode; let e">
+      <ion-list-header>
+        Next Episode:
+      </ion-list-header>
+      <ion-item>
+        <div item-start>
+          {{e.season}}x{{e.number}}
+        </div>
+        <h3>
+          <b>{{e.name}}</b>
+        </h3>
+        <p [innerHTML]="e.summary"></p>
+        <p>{{e.airdate}}</p>
+        <div item-end>
+            <countdown [timeStamp]="e.airstamp"></countdown>
+        </div>
+      </ion-item>
+    </ion-list>
+  
+    <ion-list *ngIf="showDetails && showDetails._embedded.previousepisode; let e">
+      <ion-list-header>
+        Previous Episode:
+      </ion-list-header>
+      <ion-item>
+        <div item-start>
+          {{e.season}}x{{e.number}}
+        </div>
+        <h3>
+          <b>{{e.name}}</b>
+        </h3>
+        <p [innerHTML]="e.summary"></p>
+        <p>{{e.airdate}}</p>
+      </ion-item>
+    </ion-list>
+    
+  <div class="gradient-overlay"></div>
+
+</ion-content>
