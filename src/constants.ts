@@ -27,3 +27,5 @@ export const ADMOB_IDS = {
     ios: 'ca-app-pub-1064727486518319/7624280366',
     android: 'ca-app-pub-1064727486518319/4188857413'
 }
+
+export const ONE_DAY_IN_MS = 24 * 60 * 60 * 1000;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TvMazeProvider } from '../../providers/tv-maze/tv-maze';
+import { ONE_DAY_IN_MS } from '../../constants';
 
 /**
  * Generated class for the UpcomingsPage page.
@@ -15,10 +16,12 @@ import { TvMazeProvider } from '../../providers/tv-maze/tv-maze';
   templateUrl: 'upcomings.html',
 })
 export class UpcomingsPage {
-
+  public pendingRequests = 2;
   public tomorrow: TvMaze.Schedule[] = [];
   public today: TvMaze.Schedule[] = [];
+  public loading: boolean = false;
 
+  private tomorrowDate: string;
 
   constructor(
     public navCtrl: NavController,
@@ -28,8 +31,37 @@ export class UpcomingsPage {
   }
 
   ionViewDidLoad() {
-    this.tvMaze.getTop().subscribe((res) => { this.today = res; });
+    const tomorrow = new Date().getTime() + ONE_DAY_IN_MS;
+    this.tomorrowDate = new Date(tomorrow).toISOString().slice(0, 10);
 
-    this.tvMaze.getTop(new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toISOString().slice(0,10)).subscribe((res) => { this.tomorrow = res; });
+    this.loading = true;
+
+    this.tvMaze.getTop().subscribe(
+      (res) => {
+        this.today = res;
+        this._handleResponse();
+      },
+      (err) => {
+        this._handleResponse();
+      }
+    );
+
+    this.tvMaze.getTop(this.tomorrowDate).subscribe(
+      (res) => {
+        this.tomorrow = res;
+
+        this._handleResponse();
+      },
+      (err) => {
+        this._handleResponse();
+      }
+    );
+  }
+
+  private _handleResponse(): void {
+    this.pendingRequests -= 1;
+    if (this.pendingRequests === 0) {
+      this.loading = false;
+    }
   }
 }

@@ -30,11 +30,11 @@ export class FavoritesPage {
     this.api.getFavorites()
       .subscribe(
         (res: any) => {
-          this.loading = false;
+          // this.loading = false;
           this.favorites = res.data.favorites;
         },
         (err) => {
-          this.loading = false;
+          // this.loading = false;
           console.log(err);
         }
       );

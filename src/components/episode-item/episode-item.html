@@ -1,6 +1,6 @@
 <!-- Generated template for the EpisodeItemComponent component -->
 <ion-card (click)="clickedItem.emit(item)">
-  <button ion-button large icon-only clear color="secondary" class="bookmark-button" (click)="toggleSaved(); $event.stopPropagation();"
+  <button ion-button large icon-only clear color="primary" class="bookmark-button" (click)="toggleSaved(); $event.stopPropagation();"
     mode="md">
     <ion-icon name="ios-bookmark"></ion-icon>
     <ion-icon [name]="isSaved ? 'md-heart' : 'md-heart-outline'" color="white" class="heart-icon"></ion-icon>

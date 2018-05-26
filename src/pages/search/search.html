@@ -5,6 +5,7 @@
   <ion-toolbar color="white">
     <ion-searchbar [showCancelButton]="true" [formControl]="formControl"></ion-searchbar>
   </ion-toolbar>
+  <loader *ngIf="loading"></loader>
 </ion-header>
 
 <ion-content>

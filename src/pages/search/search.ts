@@ -31,6 +31,10 @@ export class SearchPage {
 
   ionViewDidLoad() {
     console.log(this.formControl);
+    this.formControl.valueChanges.subscribe(() => {
+      this.loading = true;
+    });
+
     this.formControl.valueChanges.debounceTime(1000).subscribe((newKeyword) => {
       console.log(newKeyword);
       this.onInput(newKeyword);
@@ -38,15 +42,16 @@ export class SearchPage {
   }
 
   public onInput(ev: any): void {
-    this.loading = true;
-    console.log(ev);
-
     this.tvMaze.search(ev)
       .subscribe(
         res => {
+          this.loading = false;
           this.results = res;
-          console.log(this.results)
+        },
+        err => {
+          this.loading = false;
+          console.log(err);
         }
-      )
+      );
   }
 }
