@@ -1,7 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Episode } from '../../models/Episode';
 import { AVAILABLE_OVERLAY_CLASSES } from '../../constants';
-import { StoredSeriesProvider } from '../../providers/stored-series/stored-series';
 import { ApiProvider } from '../../providers/api/api';
 
 /**
@@ -18,9 +16,9 @@ export class EpisodeItemComponent {
   private _item: TvMaze.Schedule;
   public overlayClass: string;
 
-  @Output() clickedItem: EventEmitter<Episode> = new EventEmitter();
+  @Output() clickedItem: EventEmitter<TvMaze.Schedule> = new EventEmitter();
 
-  constructor(public storedSeries: StoredSeriesProvider, public api: ApiProvider) {
+  constructor(public api: ApiProvider) {
 
   }
 
@@ -43,12 +41,8 @@ export class EpisodeItemComponent {
   
   public toggleSaved(): void {
     if (this.isSaved) {
-      // Remove From saved
-      this.storedSeries.remove(this.item);
       this.api.removeFavorite(this.item.show.id)
     } else {
-      // Add to saved
-      this.storedSeries.store(this.item);
       this.api.addFavorite(this.item.show.id)
     }
   }
@@ -56,5 +50,4 @@ export class EpisodeItemComponent {
   public getClassName(): string {
     return AVAILABLE_OVERLAY_CLASSES[Math.floor(Math.random() * AVAILABLE_OVERLAY_CLASSES.length)];
   }
-
 }

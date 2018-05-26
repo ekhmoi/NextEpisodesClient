@@ -22,3 +22,8 @@ export const AVAILABLE_OVERLAY_CLASSES = [
 ];
 
 export const UPDATE_COUNTDOWN_TIME = 1000;
+
+export const ADMOB_IDS = {
+    ios: 'ca-app-pub-1064727486518319/7624280366',
+    android: 'ca-app-pub-1064727486518319/4188857413'
+}

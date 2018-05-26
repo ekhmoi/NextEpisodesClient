@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Episode } from '../../models/Episode';
-import { TopEpisodesProvider } from '../../providers/top-episodes/top-episodes';
-import { EpisodeOverview } from '../../models/EpisodeOverview';
 import { TvMazeProvider } from '../../providers/tv-maze/tv-maze';
 import { ApiProvider } from '../../providers/api/api';
 
@@ -40,7 +37,6 @@ export class OverviewPage {
       })
     }
   }
-
 
   public get isSaved(): boolean {
     if (!this.showDetails) {

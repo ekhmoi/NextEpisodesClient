@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { URLS } from '../../constants';
+import { map } from 'rxjs/operators';
 
 /*
   Generated class for the ApiProvider provider.
@@ -60,10 +61,11 @@ export class ApiProvider {
   }
 
   public getFavorites() {
-    return this.http.post(`${URLS.SERVER_URL}/get-favorites`, { token: localStorage.getItem('API_TOKEN') }).map((res: any) => {
+    return this.http.post(`${URLS.SERVER_URL}/get-favorites`, { token: localStorage.getItem('API_TOKEN') })
+    .pipe(map((res: any) => {
       this.favorites = res.data.favorites;
       return res;
-    });
+    }));
   }
 
   public isFavorite(id): boolean {

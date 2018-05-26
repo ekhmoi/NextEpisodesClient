@@ -1,0 +1,14 @@
+<ion-header no-border>
+  <ion-navbar color="white">
+    <ion-title>Search</ion-title>
+  </ion-navbar>
+  <ion-toolbar color="white">
+    <ion-searchbar [showCancelButton]="true" [formControl]="formControl"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <search-result-item *ngFor="let item of results" [item]="item.show" (clickedResult)="navCtrl.push('OverviewPage', { episode: { show: $event } })"></search-result-item>
+  </ion-list>
+</ion-content>

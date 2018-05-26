@@ -1,23 +1,28 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { TopEpisodesProvider } from '../../providers/top-episodes/top-episodes';
-import { Episode } from '../../models/Episode';
-import { RecentEpisodes } from '../../interfaces/RecentEpisodes';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TvMazeProvider } from '../../providers/tv-maze/tv-maze';
 
+/**
+ * Generated class for the UpcomingsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-upcomings',
+  templateUrl: 'upcomings.html',
 })
-export class HomePage {
-  public segment: string = 'today';
+export class UpcomingsPage {
+
   public tomorrow: TvMaze.Schedule[] = [];
   public today: TvMaze.Schedule[] = [];
 
 
   constructor(
     public navCtrl: NavController,
-    public topEpisodes: TopEpisodesProvider,
+    public navParams: NavParams,
     public tvMaze: TvMazeProvider
   ) {
   }

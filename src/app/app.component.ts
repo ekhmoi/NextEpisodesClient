@@ -3,19 +3,19 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { TabsPage } from '../pages/tabs/tabs';
-import { Push, PushObject, PushOptions } from '@ionic-native/push';
+import { Push, PushObject } from '@ionic-native/push';
 import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 import { ApiProvider } from '../providers/api/api';
+import { ADMOB_IDS } from '../constants';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = TabsPage;
+  rootPage: any = 'AppTabsPage';
 
   constructor(
-    platform: Platform,
+    private platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
     private push: Push,
@@ -32,14 +32,14 @@ export class MyApp {
   }
 
   public initApp(): void {
+    const id = this.platform.is('ios') ? ADMOB_IDS.ios : ADMOB_IDS.android
     const bannerConfig: AdMobFreeBannerConfig = {
-      // add your config here
-      // for the sake of this example we will just use the test config
-      id: 'ca-app-pub-1064727486518319/7624280366',
+      id,
       autoShow: true
     };
     this.admobFree.banner.config(bannerConfig);
     this.admobFree.banner.prepare().then(r => console.log(r)).catch(e => console.log(e));
+    
     const pushObject: PushObject = this.push.init({});
     if (!localStorage.getItem('API_TOKEN')) {
       this.api.getToken().subscribe(

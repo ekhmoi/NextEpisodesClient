@@ -14,9 +14,7 @@ import { UPDATE_COUNTDOWN_TIME } from '../../constants';
 export class CountdownComponent implements OnDestroy {
   private timeString;
   private _timeStamp: number;
-  private intervalId: number;
   private timeoutId: number;
-  private text: string;
   
 
   @Input() color: string = 'primary';
@@ -27,16 +25,14 @@ export class CountdownComponent implements OnDestroy {
   }
 
   get timeStamp(): string {
-    return this._timeStamp.toString();
+    return this._timeStamp as any;
   }
 
   private setDifference(): void {
     const now = new Date().getTime();
     const dest = new Date(this.timeString).getTime()
     this._timeStamp = dest - now;
-    this.text = this.msToTime(this._timeStamp);
   }
-
 
   ngOnDestroy() {
     if (this.timeoutId) {
@@ -50,17 +46,4 @@ export class CountdownComponent implements OnDestroy {
       this.startCountDown();
     }, UPDATE_COUNTDOWN_TIME);
   }
-
-  msToTime(duration: number) {
-    let seconds: any = parseInt(((duration/1000)%60) as any), 
-        minutes: any = parseInt(((duration/(1000*60))%60) as any), 
-        hours: any = parseInt(((duration/(1000*60*60))%24) as any);
-
-    hours = (hours < 10) ? "0" + hours : hours;
-    minutes = (minutes < 10) ? "0" + minutes : minutes;
-    seconds = (seconds < 10) ? "0" + seconds : seconds;
-
-    return hours + ":" + minutes + ":" + seconds;
-}
-
 }

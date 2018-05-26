@@ -28,9 +28,6 @@ export class TvMazeProvider {
   }
 
   public getShowDetails(id: number): Observable<TvMaze.ShowDetails> {
-    const params = {
-      'embed[]': 'nextepisode',
-    }
     return this.http.get<TvMaze.ShowDetails>(`${TV_MAZE_URL}shows/${id}?embed[]=nextepisode&embed[]=previousepisode`);
   }
 
