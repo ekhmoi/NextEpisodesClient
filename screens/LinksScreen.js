@@ -23,7 +23,7 @@ export default class LinksScreen extends React.Component {
             shadowRadius: 5,
             shadowOpacity: 0.1
         },
-        headerTintColor: Colors.dark(0.8),
+        headerTintColor: Colors.dark(0.65),
         headerLeft: null
     };
 

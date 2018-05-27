@@ -78,7 +78,7 @@ const styles = {
         elevation: 3
     },
     firstLine: {
-        color: Colors.dark(0.8),
+        color: Colors.dark(0.65),
         fontWeight: '600',
         fontSize: 14,
         marginTop: 10,

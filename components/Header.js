@@ -18,7 +18,7 @@ const styles = {
         paddingLeft: 10
     },
     text: {
-        color: Colors.dark(0.8),
+        color: Colors.dark(0.65),
         fontSize: 18,
         fontWeight: 'bold',
         textAlign: 'center'

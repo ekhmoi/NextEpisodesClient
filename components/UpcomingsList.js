@@ -28,7 +28,7 @@ const styles = {
         fontWeight: '500',
         marginLeft: 10,
         marginBottom: 10,
-        color: Colors.dark(0.8)
+        color: Colors.dark(0.65)
     }
 };
 
